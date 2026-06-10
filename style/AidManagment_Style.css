@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+.main-pane {
+    -fx-padding: 20;
+    -fx-background-color: #f9f9f9;
+}
+
+.field-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.search-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.showall-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+

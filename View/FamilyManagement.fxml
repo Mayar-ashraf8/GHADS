@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controllers.FamilyManagementController">
+
+   <top>
+        <MenuBar fx:id="menuBar">
+            <menus>
+                <Menu text="File">
+                    <MenuItem onAction="#handleExit" text="Exit" />
+                </Menu>
+
+                <Menu text="Format">
+                    <Menu text="Font Family">
+                        <RadioMenuItem fx:id="arialbtn" onAction="#arialFontHandle" text="Arial" />
+                        <RadioMenuItem fx:id="SansSerifbtn" onAction="#SansSerifFontHandle" text="Sans Serif" />
+                        <RadioMenuItem fx:id="timesnewbtn" onAction="#TimeNewFontHandle" text="Times New Roman" />
+                    </Menu>
+
+                    <Menu text="Font Size">
+                        <RadioMenuItem fx:id="smallbtn" onAction="#smallFontHandle" text="Small" />
+                        <RadioMenuItem fx:id="mediambtn" onAction="#MediamFontHandle" text="Medium" />
+                        <RadioMenuItem fx:id="largebtn" onAction="#LargeFontHandle" text="Large" />
+                    </Menu>
+
+                    <Menu text="Background Color">
+                        <RadioMenuItem fx:id="lightbtn" onAction="#LightBackgroud" text="Light" />
+                        <RadioMenuItem fx:id="darkbtn" onAction="#darkBackgroud" text="Dark" />
+                    </Menu>
+                </Menu>
+
+                <Menu text="Help">
+                    <MenuItem onAction="#aboutHandle" text="About App" />
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+<center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <TextField fx:id="familyNameField" promptText="Family Name" />
+            <TextField fx:id="nationalIdField" promptText="National ID" />
+            <TextField fx:id="locationField" promptText="Location" />
+            <TextField fx:id="phoneField" promptText="Phone Number" />
+            <TextField fx:id="familySizeField" promptText="Family Size" />
+            <ComboBox fx:id="vulnerabilityComb" promptText="Vulnerability Level" />
+            <DatePicker fx:id="registrationDatePicker" promptText="Registration Date" />
+            <DatePicker fx:id="lastAidDatePicker" promptText="Last Aid Date" />
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#addFamilyHandle" text="Add Family" />
+                <Button onAction="#editFamilyHandle" text="Edit Family" />
+                <Button onAction="#deleteFamilyHandle" text="Delete Family" />
+                <Button onAction="#resetBtnHandle" text="Reset" />
+                <Button onAction="#backBtnHandle" text="Back" />
+            </HBox>
+
+            <TableView fx:id="familyTable" prefHeight="300" prefWidth="800">
+                <columns>
+                    <TableColumn fx:id="idFamilyCol" prefWidth="60" text="ID" />
+                    <TableColumn fx:id="householdCol" prefWidth="120" text="House_Hold Name" />
+                    <TableColumn fx:id="NationalCol" prefWidth="120" text="National ID" />
+                    <TableColumn fx:id="LocationCol" prefWidth="120" text="Location" />
+                    <TableColumn fx:id="phoneCol" prefWidth="100" text="Phone" />
+                    <TableColumn fx:id="FamilysizeCol" prefWidth="100" text="Family Size" />
+                    <TableColumn fx:id="VulnerabilityCol" prefWidth="100" text="Vulnerability" />
+                    <TableColumn fx:id="RegistrationCol" prefWidth="120" text="Registration Date" />
+                    <TableColumn fx:id="lastAidCol" prefWidth="120" text="Last Aid Date" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

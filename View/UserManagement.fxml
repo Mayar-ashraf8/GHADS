@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.UserManagementController">
+
+    <!-- ✅ MenuBar كامل -->
+    <top>
+        <MenuBar fx:id="menuBar">
+            <menus>
+                <!-- File Menu -->
+                <Menu text="File">
+                    <MenuItem onAction="#handleExit" text="Exit" />
+                </Menu>
+
+                <!-- Format Menu -->
+                <Menu text="Format">
+                    <!-- Font Family -->
+                    <Menu text="Font Family">
+                        <RadioMenuItem fx:id="arialbtn" onAction="#arialFontHandle" text="Arial" />
+                        <RadioMenuItem fx:id="SansSerifbtn" onAction="#SansSerifFontHandle" text="Sans Serif" />
+                        <RadioMenuItem fx:id="timesnewbtn" onAction="#TimeNewFontHandle" text="Times New Roman" />
+                    </Menu>
+
+                    <!-- Font Size -->
+                    <Menu text="Font Size">
+                        <RadioMenuItem fx:id="smallbtn" onAction="#smallFontHandle" text="Small" />
+                        <RadioMenuItem fx:id="mediambtn" onAction="#MediamFontHandle" text="Medium" />
+                        <RadioMenuItem fx:id="largebtn" onAction="#LargeFontHandle" text="Large" />
+                    </Menu>
+
+                    <!-- Background Color -->
+                    <Menu text="Background Color">
+                        <RadioMenuItem fx:id="lightbtn" onAction="#LightBackgroud" text="Light" />
+                        <RadioMenuItem fx:id="darkbtn" onAction="#darkBackgroud" text="Dark" />
+                    </Menu>
+                </Menu>
+
+                <!-- Help Menu -->
+                <Menu text="Help">
+                    <MenuItem onAction="#aboutHandle" text="About App" />
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <TextField fx:id="fullNameField" promptText="Full Name" />
+            <TextField fx:id="usernameField" promptText="Username" />
+            <PasswordField fx:id="passwordField" promptText="Password" />
+            <TextField fx:id="emailField" promptText="Email" />
+            <ComboBox fx:id="roleComb" promptText="Role" />
+            <ComboBox fx:id="orgComb" promptText="Organization" />
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#adduserBtnHandle" text="Add User" />
+                <Button onAction="#edituserBtnHandle" text="Edit User" />
+                <Button onAction="#deleteuserBtnHandle" text="Delete User" />
+            <Button mnemonicParsing="false" onAction="#ResetBtnHandle" text="Reset" />
+                <Button onAction="#backBtnHandle" text="Back" />
+            </HBox>
+
+            <TableView fx:id="userTable" prefHeight="300" prefWidth="600">
+                <columns>
+                    <TableColumn fx:id="fullnameCol" prefWidth="120" text="Full Name" />
+                    <TableColumn fx:id="usernameCol" prefWidth="120" text="Username" />
+                    <TableColumn fx:id="emailCol" prefWidth="150" text="Email" />
+                    <TableColumn fx:id="roleCol" prefWidth="100" text="Role" />
+                    <TableColumn fx:id="OrgCol" prefWidth="120" text="Organization" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

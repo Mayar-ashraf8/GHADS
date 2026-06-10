@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+.login-pane {
+    -fx-background-color: linear-gradient(to bottom, #3A7BD5, #00d2ff);
+}
+
+.title-label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.logo-image {
+    -fx-image: url("logo.png"); 
+}
+
+.field-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.input-field {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #ffffff;
+    -fx-background-color: #f9f9f9;
+}
+
+.login-button {
+    -fx-background-color: #0078D7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+}
+
+.reset-button {
+    -fx-background-color: #E0E0E0;
+    -fx-text-fill: #333;
+    -fx-background-radius: 5;
+}
+
+.error-label {
+    -fx-text-fill: red;
+    -fx-font-size: 13px;
+}
+
+

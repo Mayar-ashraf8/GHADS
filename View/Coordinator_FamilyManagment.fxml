@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="387.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Coordinator_FamilyManagmentController">
+
+    <children>
+        <MenuBar fx:id="menubar" layoutY="0.0" prefHeight="25" prefWidth="940">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem onAction="#handleExit" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu text="Format">
+                    <items>
+                        <Menu text="Font Family">
+                            <items>
+                                <RadioMenuItem fx:id="arialbtn" onAction="#arialFontHandle" text="Arial" />
+                                <RadioMenuItem fx:id="SansSerifbtn" onAction="#SansSerifFontHandle" text="Sans Serif" />
+                                <RadioMenuItem fx:id="timesnewbtn" onAction="#TimeNewFontHandle" text="Times New Roman" />
+                            </items>
+                        </Menu>
+                        <Menu text="Font Size">
+                            <items>
+                                <RadioMenuItem fx:id="smallbtn" onAction="#smallFontHandle" text="Small" />
+                                <RadioMenuItem fx:id="mediambtn" onAction="#MediamFontHandle" text="Medium" />
+                                <RadioMenuItem fx:id="largebtn" onAction="#LargeFontHandle" text="Large" />
+                            </items>
+                        </Menu>
+                        <Menu text="Background Color">
+                            <items>
+                                <RadioMenuItem fx:id="lightbtn" onAction="#LightBackgroud" text="Light" />
+                                <RadioMenuItem fx:id="darkbtn" onAction="#darkBackgroud" text="Dark" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu text="Help">
+                    <items>
+                        <MenuItem onAction="#aboutHandle" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+<Label layoutX="279.0" layoutY="40.0" prefHeight="40.0" prefWidth="400.0" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-background-color: #ecf0f1; -fx-alignment: center;" text="📋 Family Management" textAlignment="CENTER" />
+        <GridPane hgap="20" layoutX="66.0" layoutY="119.0" vgap="15">
+            <children>
+                <Label text="Family Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="familyNameField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label text="Location:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="locationField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Family Size:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="familySizeField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Vulnerability Level:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <ComboBox fx:id="vulnerabilityComb" prefHeight="26.0" prefWidth="145.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <Label layoutX="555.0" layoutY="117.0" text="National ID:" />
+        <TextField fx:id="nationalIdField" layoutX="665.0" layoutY="113.0" />
+
+        <Label layoutX="574.0" layoutY="159.0" text="Phone:" />
+        <TextField fx:id="phoneField" layoutX="665.0" layoutY="155.0" />
+
+        <Label layoutX="539.0" layoutY="198.0" text="Registration Date:" />
+        <DatePicker fx:id="registrationDatePicker" layoutX="665.0" layoutY="194.0" />
+
+        <Label layoutX="556.0" layoutY="234.0" text="Last Aid Date:" />
+        <DatePicker fx:id="lastAidDatePicker" layoutX="665.0" layoutY="230.0" />
+
+        <HBox layoutX="200" layoutY="300" spacing="20" />
+          <Button layoutX="769.0" layoutY="311.0" onAction="#backBtnHandle" prefHeight="26.0" prefWidth="111.0" styleClass="btn-back" text="Back" />
+          <Button layoutX="515.0" layoutY="298.0" onAction="#resetBtnHandle" styleClass="btn-secondary" text=" Reset" />
+          <Button layoutX="394.0" layoutY="298.0" onAction="#addFamilyHandle" styleClass="btn-primary" text="Add Family" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controllers.CoordinatorProfileController">
+   <children>
+        <!-- Menu Bar -->
+        <MenuBar fx:id="menubar" layoutY="1.0" prefHeight="25" prefWidth="620">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem onAction="#handleExit" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu text="Format">
+                    <items>
+                        <Menu text="Font Family">
+                            <items>
+                                <RadioMenuItem fx:id="arialbtn" onAction="#arialFontHandle" text="Arial" />
+                                <RadioMenuItem fx:id="SansSerifbtn" onAction="#SansSerifFontHandle" text="Sans Serif" />
+                                <RadioMenuItem fx:id="timesnewbtn" onAction="#TimeNewFontHandle" text="Times New Roman" />
+                            </items>
+                        </Menu>
+                        <Menu text="Font Size">
+                            <items>
+                                <RadioMenuItem fx:id="smallbtn" onAction="#smallFontHandle" text="Small" />
+                                <RadioMenuItem fx:id="mediambtn" onAction="#MediamFontHandle" text="Medium" />
+                                <RadioMenuItem fx:id="largebtn" onAction="#LargeFontHandle" text="Large" />
+                            </items>
+                        </Menu>
+                        <Menu text="Background Color">
+                            <items>
+                                <RadioMenuItem fx:id="lightbtn" onAction="#LightBackgroud" text="Light" />
+                                <RadioMenuItem fx:id="darkbtn" onAction="#darkBackgroud" text="Dark" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu text="Help">
+                    <items>
+                        <MenuItem onAction="#aboutHandle" text="About" />
+                    </items>
+                </Menu>
+                <Menu text="Settings">
+                    <items>
+                        <MenuItem onAction="#PassChangeHandle" text="Change Password" />
+                        <MenuItem onAction="#logoutHandle" text="Logout" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <!-- Title -->
+        <Label layoutX="200.0" layoutY="45.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Coordinator Profile" />
+
+        <!-- Profile Fields -->
+        <Label layoutX="100.0" layoutY="90.0" text="Name:" />
+        <TextField fx:id="nameField" layoutX="200.0" layoutY="85.0" />
+
+        <Label layoutX="100.0" layoutY="130.0" text="Full Name:" />
+        <TextField fx:id="fullnameField" layoutX="200.0" layoutY="125.0" />
+
+        <Label layoutX="100.0" layoutY="170.0" text="Email:" />
+        <TextField fx:id="emailField" layoutX="200.0" layoutY="165.0" />
+
+        <Label layoutX="100.0" layoutY="210.0" text="Organization:" />
+        <TextField fx:id="orgField" editable="false" layoutX="200.0" layoutY="205.0" />
+
+        <Label layoutX="100.0" layoutY="250.0" text="Role:" />
+        <TextField fx:id="roleField" editable="false" layoutX="200.0" layoutY="245.0" />
+        <Button layoutX="215.0" layoutY="284.0" onAction="#editProBtnHandle" text="Edit" />
+        <Button layoutX="275.0" layoutY="284.0" onAction="#resetProBtnHandle" text="Reset" />
+        <Button layoutX="440.0" layoutY="310.0" onAction="#BackBtnHandle" text="Back -&gt;" />
+   </children>  
+</AnchorPane>

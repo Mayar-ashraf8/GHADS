@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AidDistributionController">
+    
+   <top>
+        <MenuBar fx:id="menuBar">
+            <menus>
+                <Menu text="File">
+                    <MenuItem onAction="#handleExit" text="Exit" />
+                </Menu>
+
+                <Menu text="Format">
+                    <Menu text="Font Family">
+                        <RadioMenuItem fx:id="arialbtn" onAction="#arialFontHandle" text="Arial" />
+                        <RadioMenuItem fx:id="SansSerifbtn" onAction="#SansSerifFontHandle" text="Sans Serif" />
+                        <RadioMenuItem fx:id="timesnewbtn" onAction="#TimeNewFontHandle" text="Times New Roman" />
+                    </Menu>
+
+                    <Menu text="Font Size">
+                        <RadioMenuItem fx:id="smallbtn" onAction="#smallFontHandle" text="Small" />
+                        <RadioMenuItem fx:id="mediambtn" onAction="#MediamFontHandle" text="Medium" />
+                        <RadioMenuItem fx:id="largebtn" onAction="#LargeFontHandle" text="Large" />
+                    </Menu>
+
+                    <Menu text="Background Color">
+                        <RadioMenuItem fx:id="lightbtn" onAction="#LightBackgroud" text="Light" />
+                        <RadioMenuItem fx:id="darkbtn" onAction="#darkBackgroud" text="Dark" />
+                    </Menu>
+                </Menu>
+
+                <Menu text="Help">
+                    <MenuItem onAction="#aboutHandle" text="About App" />
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+<center>
+        <VBox alignment="CENTER" spacing="10" styleClass="main-pane">
+            <children>
+                <HBox alignment="CENTER" spacing="10">
+                    <children>
+                        <Label styleClass="field-label" text="Organization:" />
+                        <ComboBox fx:id="orgComb" prefWidth="200" />
+                        <Button onAction="#searchBtnHandle" styleClass="search-button" text="Search" />
+                        <Button onAction="#showBtnHandle" styleClass="showall-button" text="Show All" />
+                  <Button mnemonicParsing="false" onAction="#backBtnHandle" text="Back" />
+                    </children>
+                </HBox>
+
+                <TableView fx:id="AidTable" prefHeight="400" prefWidth="750">
+                    <columns>
+                        <TableColumn fx:id="DistributionIdCol" prefWidth="100" text="Distribution ID" />
+                        <TableColumn fx:id="DistDateCol" prefWidth="150" text="Distribution Date" />
+                        <TableColumn fx:id="famIdCol" prefWidth="150" text="Family ID" />
+                        <TableColumn fx:id="OrgIdCol" prefWidth="150" text="Organization ID" />
+                        <TableColumn fx:id="DistributedByCol" prefWidth="150" text="Distributed By " />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+    
+</BorderPane>

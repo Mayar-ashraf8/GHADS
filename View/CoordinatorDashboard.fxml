@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/26" fx:controller="Controllers.CoordinatorDashboardController">
+    
+    <children>
+        <MenuBar fx:id="menubar" layoutY="0.0" prefHeight="25" prefWidth="900">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem onAction="#handleExit" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu text="Format">
+                    <items>
+                        <Menu text="Font Family">
+                            <items>
+                                <RadioMenuItem fx:id="arialbtn" onAction="#arialFontHandle" text="Arial" />
+                                <RadioMenuItem fx:id="SansSerifbtn" onAction="#SansSerifFontHandle" text="Sans Serif" />
+                                <RadioMenuItem fx:id="timesnewbtn" onAction="#TimeNewFontHandle" text="Times New Roman" />
+                            </items>
+                        </Menu>
+                        <Menu text="Font Size">
+                            <items>
+                                <RadioMenuItem fx:id="smallbtn" onAction="#smallFontHandle" text="Small" />
+                                <RadioMenuItem fx:id="mediambtn" onAction="#MediamFontHandle" text="Medium" />
+                                <RadioMenuItem fx:id="largebtn" onAction="#LargeFontHandle" text="Large" />
+                            </items>
+                        </Menu>
+                        <Menu text="Background Color">
+                            <items>
+                                <RadioMenuItem fx:id="lightbtn" onAction="#LightBackgroud" text="Light" />
+                                <RadioMenuItem fx:id="darkbtn" onAction="#darkBackgroud" text="Dark" />
+                            </items>
+                        </Menu>
+                    </items>
+                </Menu>
+                <Menu text="Help">
+                    <items>
+                        <MenuItem onAction="#aboutHandle" text="About" />
+                    </items>
+                </Menu>
+                <Menu text="Settings">
+                    <items>
+                        <MenuItem onAction="#PassChangeHandle" text="Change Password" />
+                        <MenuItem onAction="#logoutHandle" text="Logout" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+
+        <!-- زر My Profile -->
+        <Button fx:id="profileBtn" layoutX="780.0" layoutY="40.0" onAction="#ProfileBtnHandle" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="My Profile" />
+
+        <VBox layoutY="80.0" prefHeight="500" prefWidth="900" spacing="30" style="-fx-padding: 20; -fx-alignment: center;">
+            
+            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="GHADS Coordinator Dashboard" />
+
+          <HBox alignment="CENTER" spacing="20">
+    <Button fx:id="NumOfSerFamLabel"
+            wrapText="true"
+            textAlignment="CENTER"
+            style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"
+            prefWidth="300"
+            prefHeight="100"
+            text="✅ Families Served By The Organization: 0" />
+
+    <Button fx:id="NumOfFamLabel"
+            wrapText="true"
+            textAlignment="CENTER"
+            style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"
+            prefWidth="300"
+            prefHeight="100"
+            text="👪 Total Families: 0" />
+
+    <Button fx:id="NumOfNotSerFamLabel"
+            wrapText="true"
+            textAlignment="CENTER"
+            style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"
+            prefWidth="300"
+            prefHeight="100"
+            text="❗ Families Not Served: 0" />
+</HBox>
+
+            <GridPane alignment="CENTER" hgap="20" style="-fx-padding: 10;" vgap="20">
+    <children>
+        <Button onAction="#FamilyManagementbtn"
+                wrapText="true"
+                textAlignment="CENTER"
+                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"
+                prefWidth="300"
+                prefHeight="100"
+                text="👪 Family Management"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0" />
+
+        <Button onAction="#DistributionManagementBtn"
+                wrapText="true"
+                textAlignment="CENTER"
+                style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"
+                prefWidth="300"
+                prefHeight="100"
+                text="📦 Aid Distribution Management"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0" />
+    </children>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>
+
+            <Button onAction="#backbtn" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 460; -fx-pref-height: 50;" text="Back -&gt;" />
+        </VBox>
+    </children>
+    
+</AnchorPane>
